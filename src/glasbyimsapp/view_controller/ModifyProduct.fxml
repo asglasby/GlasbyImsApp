@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="glasbyimsapp.view_controller.InventoryController">
+    <stylesheets>
+        <URL value="@mainscreen.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.37092731829573933" layoutX="183.0" layoutY="106.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #4885ed;">
+               <children>
+                  <TextField fx:id="productIdField" layoutX="128.0" layoutY="136.0" />
+                  <TextField fx:id="productNameField" layoutX="128.0" layoutY="186.0" />
+                  <TextField fx:id="productInStockField" layoutX="128.0" layoutY="241.0" />
+                  <TextField fx:id="productPriceField" layoutX="128.0" layoutY="299.0" />
+                  <TextField fx:id="productMaxField" layoutX="76.0" layoutY="358.0" prefHeight="25.0" prefWidth="63.0" />
+                  <TextField fx:id="productMinField" layoutX="214.0" layoutY="358.0" prefHeight="25.0" prefWidth="63.0" />
+                  <Label layoutX="12.0" layoutY="26.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Modify Product" textFill="#f8f8f8" />
+                  <Label layoutX="44.0" layoutY="140.0" text="ID" textFill="#f8f8f8" />
+                  <Label layoutX="44.0" layoutY="190.0" text="Name" textFill="#f8f8f8" />
+                  <Label layoutX="44.0" layoutY="245.0" text="Inv" textFill="#f8f8f8" />
+                  <Label layoutX="44.0" layoutY="303.0" text="Price" textFill="#f8f8f8" />
+                  <Label layoutX="44.0" layoutY="362.0" text="Max" textFill="#f8f8f8" />
+                  <Label layoutX="175.0" layoutY="362.0" text="Min" textFill="#f8f8f8" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #4885ed;">
+               <children>
+                  <SplitPane dividerPositions="0.48764044943820223" layoutY="72.0" orientation="VERTICAL" prefHeight="447.0" prefWidth="557.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="415.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <Button layoutX="417.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleAddAssociatedPart" prefHeight="25.0" prefWidth="63.0" text="Add" AnchorPane.bottomAnchor="8.0" />
+                              <TableView fx:id="ppartsTable" layoutX="17.0" layoutY="10.0" prefHeight="171.0" prefWidth="463.0">
+                                <columns>
+                                  <TableColumn fx:id="ppartIdColumn" prefWidth="75.0" text="Part ID" />
+                                  <TableColumn fx:id="ppartNameColumn" prefWidth="113.0" text="Part Name" />
+                                    <TableColumn fx:id="ppartInStockColumn" prefWidth="133.0" text="Inventory Level" />
+                                    <TableColumn fx:id="ppartPriceColumn" prefWidth="139.0" text="Price per Unit" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="497.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <Button layoutX="417.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleDeleteAssociatedPart" prefHeight="25.0" prefWidth="63.0" text="Delete" AnchorPane.bottomAnchor="8.0" />
+                              <TableView fx:id="associatedPartsTable" layoutX="17.0" layoutY="14.0" prefHeight="180.0" prefWidth="463.0">
+                                <columns>
+                                  <TableColumn fx:id="apartIdColumn" prefWidth="75.0" text="Part ID" />
+                                  <TableColumn fx:id="apartNameColumn" prefWidth="118.0" text="Part Name" />
+                                    <TableColumn fx:id="apartInStockColumn" prefWidth="128.0" text="Inventory Level" />
+                                    <TableColumn fx:id="apartPriceColumn" prefWidth="141.0" text="Price per Unit" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <Button layoutX="346.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleProductSave" prefHeight="25.0" prefWidth="51.0" text="Save" />
+                  <Button layoutX="417.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleProductCancel" prefHeight="25.0" prefWidth="63.0" text="Cancel" />
+                  <Button layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleSearchPParts" text="Search" />
+                  <TextField fx:id="searchPartField" layoutX="208.0" layoutY="35.0" prefHeight="25.0" prefWidth="271.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

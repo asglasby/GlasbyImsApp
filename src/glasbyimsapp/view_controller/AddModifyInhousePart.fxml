@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="glasbyimsapp.view_controller.InventoryController">
+    <stylesheets>
+        <URL value="@mainscreen.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+               <TextField fx:id="partMachineIdField" disable="true" layoutX="142.0" layoutY="320.0" />
+               <TextField fx:id="partMinField" disable="true" layoutX="368.0" layoutY="275.0" />
+               <TextField fx:id="partMaxField" disable="true" layoutX="142.0" layoutY="275.0" />
+               <TextField fx:id="partPriceField" disable="true" layoutX="142.0" layoutY="229.0" />
+               <TextField fx:id="partInStockField" disable="true" layoutX="142.0" layoutY="198.0" />
+               <TextField fx:id="partNameField" disable="true" layoutX="142.0" layoutY="161.0" />
+               <TextField fx:id="partIdField" disable="true" editable="false" layoutX="142.0" layoutY="119.0" text="Auto Generated" />
+               <Button layoutX="492.0" layoutY="354.0" mnemonicParsing="false" onAction="#handlePartCancel" prefHeight="27.0" prefWidth="69.0" text="Cancel" />
+               <Button layoutX="397.0" layoutY="354.0" mnemonicParsing="false" onAction="#handlePartSave" prefHeight="27.0" prefWidth="60.0" text="Save" />
+               <Label fx:id="partTypeLabel" layoutX="38.0" layoutY="324.0" text="Machine ID" />
+               <Label layoutX="329.0" layoutY="279.0" text="Min" />
+               <Label layoutX="38.0" layoutY="279.0" text="Max" />
+               <Label layoutX="38.0" layoutY="233.0" text="Price/Cost" />
+               <Label layoutX="38.0" layoutY="202.0" text="Inv" />
+               <Label layoutX="38.0" layoutY="165.0" text="Name" />
+               <Label layoutX="38.0" layoutY="123.0" text="ID" />
+               <RadioButton fx:id="outsourcedButton" layoutX="339.0" layoutY="47.0" mnemonicParsing="false" onAction="#outsourcedSelected" text="Outsourced">
+               <toggleGroup>
+                  <ToggleGroup fx:id="inOutRadioButtons" />
+               </toggleGroup></RadioButton>
+               <RadioButton fx:id="inhouseButton" layoutX="200.0" layoutY="47.0" mnemonicParsing="false" onAction="#inhouseSelected" text="In-House" toggleGroup="$inOutRadioButtons" />
+               <Label fx:id="addPartLabel" layoutX="22.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Add Part" />            
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
